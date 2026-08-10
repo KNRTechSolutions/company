@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glowminds AI Technologies | Technology, AI & Digital Innovation</title>
+<meta name="description" content="Glowminds AI Technologies Private Limited — building AI, technology, digital products and education platforms.">
+<style>
+:root{
+  --bg:#f7f7f4;
+  --ink:#11120f;
+  --muted:#666862;
+  --line:#d9dad3;
+  --card:#ffffff;
+  --accent:#c9ff38;
+  --dark:#161713;
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.5;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+header{
+  position:sticky;top:0;z-index:50;background:rgba(247,247,244,.88);
+  backdrop-filter:blur(16px);border-bottom:1px solid rgba(217,218,211,.8)
+}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:22px;font-weight:800;letter-spacing:-.8px}
+.logo span{font-weight:500}
+.navlinks{display:flex;gap:30px;font-size:14px;color:#41423d}
+.navlinks a:hover{color:#000}
+.navcta{
+  background:var(--ink);color:#fff;padding:11px 18px;border-radius:999px;
+  font-size:14px;font-weight:700
+}
+.menu{display:none;border:0;background:none;font-size:25px}
+.hero{padding:105px 0 80px;border-bottom:1px solid var(--line)}
+.kicker{font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:#5d5f57}
+.hero h1{
+  font-size:clamp(52px,8vw,108px);line-height:.92;letter-spacing:-6px;
+  max-width:1050px;margin:20px 0 30px;font-weight:800
+}
+.hero h1 em{font-style:normal;color:#70726b}
+.hero p{font-size:19px;max-width:690px;color:var(--muted);margin:0 0 35px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 20px;border-radius:999px;font-weight:750;font-size:14px;border:1px solid var(--ink)}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.secondary{background:transparent}
+.ticker{
+  margin-top:70px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:17px 0;display:flex;gap:50px;overflow:hidden;white-space:nowrap;color:#777970;
+  font-size:12px;text-transform:uppercase;letter-spacing:1.6px
+}
+.section{padding:105px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:160px 1fr;gap:40px;margin-bottom:55px}
+.index{font-size:12px;font-weight:800;letter-spacing:1.8px;color:#777970}
+.section h2{font-size:clamp(38px,5vw,68px);line-height:.98;letter-spacing:-3px;margin:0;max-width:800px}
+.section-intro{font-size:18px;color:var(--muted);max-width:700px;margin:20px 0 0}
+.ecosystem{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;
+  min-height:300px;display:flex;flex-direction:column;justify-content:space-between;
+  transition:.25s ease
+}
+.card:hover{transform:translateY(-4px);border-color:#aaa}
+.card .num{font-size:12px;color:#8a8c84;letter-spacing:1px}
+.card h3{font-size:32px;letter-spacing:-1.5px;margin:10px 0}
+.card p{color:var(--muted);max-width:520px}
+.card a{font-weight:800;font-size:14px}
+.card.featured{background:var(--dark);color:white;border-color:var(--dark)}
+.card.featured p{color:#b9bab3}
+.pill{display:inline-block;padding:7px 10px;border-radius:999px;background:var(--accent);color:#17180f;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.capabilities{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line)}
+.cap{padding:28px 20px 10px 0;border-right:1px solid var(--line);min-height:190px}
+.cap:last-child{border-right:0}
+.cap strong{font-size:19px;display:block;margin-bottom:10px}
+.cap p{font-size:14px;color:var(--muted);margin:0}
+.structure{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch
+}
+.structure-main{background:var(--dark);color:#fff;border-radius:24px;padding:45px;min-height:430px}
+.structure-main h3{font-size:42px;letter-spacing:-2px;margin:12px 0 25px}
+.structure-main p{color:#c5c6bf;max-width:550px}
+.stack{display:flex;flex-direction:column;justify-content:center;gap:10px}
+.stack div{
+  border:1px solid var(--line);border-radius:18px;padding:20px 24px;background:#fff;
+  font-weight:750;position:relative
+}
+.stack div:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-20px;color:#777970}
+.approach{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{border-top:2px solid var(--ink);padding-top:18px}
+.step b{font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+.step h3{font-size:25px;margin:18px 0 8px}
+.step p{color:var(--muted);font-size:14px}
+.vision{
+  background:var(--dark);color:white;border-radius:28px;padding:60px;
+  display:grid;grid-template-columns:1fr 1fr;gap:50px
+}
+.vision h2{font-size:clamp(40px,5vw,68px);letter-spacing:-3px;margin:0;line-height:1}
+.vision p{color:#c4c5be;font-size:18px;max-width:580px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact h2{font-size:60px;letter-spacing:-3px;line-height:.95;margin:0}
+.contact-box{border-top:1px solid var(--line);padding-top:20px}
+.contact-box p{color:var(--muted)}
+footer{padding:35px 0}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+.footer-note{font-size:13px;color:#74766e;max-width:620px}
+.footer-links{display:flex;gap:20px;font-size:13px}
+@media(max-width:900px){
+  .navlinks{display:none}.menu{display:block}
+  .hero h1{letter-spacing:-3px}
+  .section-head{grid-template-columns:1fr;gap:15px}
+  .ecosystem,.structure,.vision,.contact{grid-template-columns:1fr}
+  .capabilities{grid-template-columns:repeat(2,1fr)}
+  .cap{border-bottom:1px solid var(--line);padding:24px 15px 24px 0}
+  .approach{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .container{width:min(var(--max),calc(100% - 28px))}
+  .nav{height:66px}.navcta{display:none}
+  .hero{padding:75px 0 55px}.hero h1{font-size:54px}
+  .section{padding:70px 0}
+  .ecosystem,.capabilities,.approach{grid-template-columns:1fr}
+  .vision{padding:35px 25px}
+  .footer-top{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">Glowminds<span> AI</span></a>
+    <nav class="navlinks">
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#build">What We Build</a>
+      <a href="#structure">Company</a>
+      <a href="#founders">Founders</a>
+      <a href="#future">Future</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="navcta" href="#contact">Talk to us →</a>
+    <button class="menu" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="kicker">Glowminds AI Technologies Private Limited</div>
+    <h1>Building technology.<br><em>Creating AI.</em></h1>
+    <p>
+      Glowminds AI Technologies Private Limited builds AI-powered products,
+      digital solutions, software platforms and technology-driven services
+      for the next generation.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#ecosystem">Explore our ecosystem →</a>
+      <a class="btn secondary" href="#contact">Build with us</a>
+    </div>
+    <div class="ticker">
+      <span>Artificial Intelligence</span><span>Software</span><span>Automation</span>
+      <span>Digital Transformation</span><span>Education Technology</span>
+      <span>Emerging Technology</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ecosystem">
+  <div class="container">
+    <div class="section-head">
+      <div class="index">001 / ECOSYSTEM</div>
+      <div>
+        <h2>One company.<br>Multiple technology ventures.</h2>
+        <p class="section-intro">
+          Our brands, platforms and technology initiatives operate under
+          Glowminds AI Technologies Private Limited, each focused on a specific
+          market, technology or customer need.
+        </p>
+      </div>
+    </div>
+
+    <div class="ecosystem">
+      <article class="card featured">
+        <div><span class="pill">Primary Platform</span><div class="num" style="margin-top:22px">01</div></div>
+        <div>
+          <h3>Glowminds.in</h3>
+          <p>
+            Our primary digital platform bringing together AI solutions,
+            technology services, digital products, education initiatives and
+            technology-driven innovations.
+          </p>
+          <a href="https://glowminds.in" target="_blank">Visit glowminds.in ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="num">02 / TECHNOLOGY</div>
+        <div>
+          <h3>KNR Tech Solutions</h3>
+          <p>
+            Technology and software solutions covering websites, applications,
+            business software, CRM, automation and digital transformation.
+          </p>
+          <a href="https://knrtech.in" target="_blank">Visit knrtech.in ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="num">03 / FUTURE TECHNOLOGY</div>
+        <div>
+          <h3>NextGenius</h3>
+          <p>
+            A future-focused technology venture exploring AI, intelligent
+            automation, AI agents, SaaS products and emerging technologies.
+          </p>
+          <a href="https://nextgenius.in" target="_blank">Visit nextgenius.in ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="num">04 / EDUCATION</div>
+        <div>
+          <h3>Student Technology Platforms</h3>
+          <p>
+            Education technology initiatives designed to help students learn,
+            build skills, prepare for careers and use AI-powered career tools.
+          </p>
+          <a href="#contact">Explore platforms →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="build">
+  <div class="container">
+    <div class="section-head">
+      <div class="index">002 / WHAT WE BUILD</div>
+      <div>
+        <h2>Technology built around real problems.</h2>
+        <p class="section-intro">
+          We combine software, AI and digital technology to create practical
+          products and solutions for businesses, students and organizations.
+        </p>
+      </div>
+    </div>
+    <div class="capabilities">
+      <div class="cap"><strong>Artificial Intelligence</strong><p>AI applications, intelligent agents, generative AI and automation systems.</p></div>
+      <div class="cap"><strong>Software & Applications</strong><p>Web applications, SaaS platforms, CRM systems and custom software.</p></div>
+      <div class="cap"><strong>Business Automation</strong><p>Solutions that reduce repetitive work and improve operational productivity.</p></div>
+      <div class="cap"><strong>Education Technology</strong><p>Digital platforms supporting learning, employability and career readiness.</p></div>
+      <div class="cap"><strong>Digital Transformation</strong><p>Modern technology solutions for evolving business processes and digital presence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="structure">
+  <div class="container">
+    <div class="section-head">
+      <div class="index">003 / STRUCTURE</div>
+      <div>
+        <h2>A connected ecosystem under one corporate entity.</h2>
+        <p class="section-intro">
+          Glowminds AI Technologies Private Limited is the corporate entity
+          behind our brands, products, platforms and technology initiatives.
+        </p>
+      </div>
+    </div>
+    <div class="structure">
+      <div class="structure-main">
+        <div class="kicker" style="color:#aaa">Corporate Entity</div>
+        <h3>Glowminds AI Technologies Private Limited</h3>
+        <p>
+          One technology company with multiple focused ventures. Each platform
+          can have its own identity, audience and purpose while operating within
+          the broader Glowminds ecosystem.
+        </p>
+      </div>
+      <div class="stack">
+        <div>Brands & Ventures</div>
+        <div>Products & Platforms</div>
+        <div>Technology & Services</div>
+        <div>Customers & Communities</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="index">004 / APPROACH</div>
+      <div><h2>From problem to scalable product.</h2></div>
+    </div>
+    <div class="approach">
+      <div class="step"><b>01 / Identify</b><h3>Understand</h3><p>We identify real-world problems faced by businesses, students and organizations.</p></div>
+      <div class="step"><b>02 / Build</b><h3>Create</h3><p>We develop practical solutions using modern software and AI technologies.</p></div>
+      <div class="step"><b>03 / Improve</b><h3>Learn</h3><p>We continuously improve products based on users, data and changing technology.</p></div>
+      <div class="step"><b>04 / Scale</b><h3>Grow</h3><p>We build solutions with the potential to serve larger markets and communities.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="founders">
+  <div class="container">
+    <div class="section-head">
+      <div class="index">005 / FOUNDERS</div>
+      <div>
+        <h2>Built with ambition. Driven by technology.</h2>
+        <p class="section-intro">
+          Glowminds is being built with a long-term vision to create technology
+          businesses that solve practical problems and grow into meaningful,
+          scalable platforms.
+        </p>
+      </div>
+    </div>
+
+    <div class="vision" style="margin-bottom:16px">
+      <div>
+        <div class="kicker" style="color:#aaa">Founder's Message</div>
+        <h2>Building for the next generation.</h2>
+      </div>
+      <div>
+        <p>
+          “Our goal is to build more than individual products. We are building
+          an ecosystem where AI, software, education and digital technology
+          come together to solve real problems.”
+        </p>
+        <p>
+          “Glowminds is designed to grow with technology and with the people
+          who use it — from businesses looking for better digital solutions
+          to students preparing for an AI-driven future.”
+        </p>
+        <p>
+          <strong>— Founder, Glowminds AI Technologies Private Limited</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="ecosystem">
+      <article class="card">
+        <div class="num">01 / LEADERSHIP</div>
+        <div>
+          <h3>Founder & Leadership</h3>
+          <p>
+            The leadership team is focused on building a technology-first
+            organization with strong execution, responsible innovation and a
+            long-term approach to products and platforms.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="num">02 / PRINCIPLES</div>
+        <div>
+          <h3>Build with Purpose</h3>
+          <p>
+            We focus on useful technology, simple experiences, continuous
+            improvement and solutions that can create measurable value.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vision">
+  <div class="container">
+    <div class="vision">
+      <div>
+        <div class="kicker" style="color:#aaa">Our Vision</div>
+        <h2>Technology that creates meaningful impact.</h2>
+      </div>
+      <div>
+        <p>
+          We envision a future where Artificial Intelligence and digital
+          technology are accessible, practical and useful for businesses,
+          students and communities.
+        </p>
+        <div class="kicker" style="color:#aaa;margin-top:45px">Our Mission</div>
+        <p>
+          To build innovative AI and technology products that solve real-world
+          problems, improve productivity, enable learning and create new
+          opportunities in the digital economy.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="future">
+  <div class="container">
+    <div class="section-head">
+      <div class="index">006 / THE FUTURE</div>
+      <div>
+        <h2>Building the technology ecosystem of tomorrow.</h2>
+        <p class="section-intro">
+          Glowminds is focused on expanding from technology services into
+          scalable AI products, digital platforms and specialized ventures
+          that can serve businesses, institutions and individuals.
+        </p>
+      </div>
+    </div>
+
+    <div class="ecosystem">
+      <article class="card featured">
+        <div><span class="pill">Future Direction</span></div>
+        <div>
+          <h3>AI-Native Products</h3>
+          <p>
+            Developing intelligent applications, AI agents and SaaS platforms
+            that make advanced AI practical for everyday business and
+            professional use.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="num">01 / BUSINESS TECHNOLOGY</div>
+        <div>
+          <h3>Smarter Businesses</h3>
+          <p>
+            Expanding software, automation, CRM and data-driven solutions that
+            help organizations operate more efficiently and make better decisions.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="num">02 / EDUCATION</div>
+        <div>
+          <h3>Future-Ready Students</h3>
+          <p>
+            Building AI-powered learning, career, internship and skill
+            development platforms designed for the changing employment landscape.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="num">03 / EMERGING TECHNOLOGY</div>
+        <div>
+          <h3>Beyond Today's Technology</h3>
+          <p>
+            Exploring emerging areas of AI, automation, intelligent systems and
+            new digital business models as technology continues to evolve.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="vision" style="margin-top:16px">
+      <div>
+        <div class="kicker" style="color:#aaa">Long-Term Vision</div>
+        <h2>From brands to a technology ecosystem.</h2>
+      </div>
+      <div>
+        <p>
+          Our long-term ambition is to develop a portfolio of trusted
+          technology brands and products under Glowminds AI Technologies
+          Private Limited.
+        </p>
+        <p>
+          Each venture will have a clear purpose, while sharing a common
+          foundation of technology, innovation, responsible AI and customer focus.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact">
+      <div>
+        <div class="kicker">007 / CONTACT</div>
+        <h2>Let's build what's next.</h2>
+      </div>
+      <div class="contact-box">
+        <p>
+          We collaborate with businesses, educational institutions,
+          entrepreneurs and organizations to build practical technology solutions.
+        </p>
+        <p><strong>Glowminds AI Technologies Private Limited</strong></p>
+        <p>
+          <strong>CIN:</strong> U62012KA2026PTC223290<br>
+          <strong>GSTIN:</strong> 29AANCG1830A1ZV
+        </p>
+        <p>
+          <strong>Registered Address:</strong><br>
+          No. 472/7, Balaji Arcade AVS Compound,<br>
+          Koramangala VI Block, Bangalore South,<br>
+          Bangalore, Karnataka – 560095, India.
+        </p>
+        <p>Corporate website: <a href="https://glowminds.in" target="_blank"><u>glowminds.in</u></a></p>
+        <a class="btn primary" href="mailto:contact@glowminds.in">Contact our team →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-top">
+    <div>
+      <div class="logo">Glowminds<span> AI</span></div>
+      <div class="footer-note">
+        Glowminds AI Technologies Private Limited — Building Technology.
+        Creating AI. Empowering the Future.
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#build">What We Build</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="container" style="padding-top:30px;color:#8a8c84;font-size:12px">
+    © 2026 Glowminds AI Technologies Private Limited. All rights reserved.<br>
+    CIN: U62012KA2026PTC223290 &nbsp; | &nbsp; GSTIN: 29AANCG1830A1ZV<br>
+    No. 472/7, Balaji Arcade AVS Compound, Koramangala VI Block, Bangalore South,
+    Bangalore, Karnataka – 560095, India.<br><br>
+    KNR Tech Solutions, NextGenius, Glowminds.in and other listed brands,
+    products and platforms are brands, ventures, products or operating
+    initiatives of Glowminds AI Technologies Private Limited, as applicable.
+  </div>
+</footer>
+
+<script>
+document.querySelector('.menu').addEventListener('click',()=>{
+  const n=document.querySelector('.navlinks');
+  n.style.display=n.style.display==='flex'?'none':'flex';
+  if(n.style.display==='flex'){
+    n.style.position='absolute';n.style.top='66px';n.style.left='0';n.style.right='0';
+    n.style.background='var(--bg)';n.style.padding='20px';n.style.flexDirection='column';
+    n.style.borderBottom='1px solid var(--line)';
+  }
+});
+</script>
+</body>
+</html>
